@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yoke Height Calculator</title>
+  <style>
+    body { font-family: sans-serif; margin: 20px; }
+    label { display: block; margin-top: 10px; }
+    .diagram { position: relative; width: 300px; height: 200px; border: 1px solid #ccc; margin-top: 20px; }
+    .tire { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 60px; background: #555; border-radius: 50% / 40%; }
+    .yoke { position: absolute; left: 50%; width: 10px; height: 10px; background: red; transform: translateX(-50%); cursor: pointer; }
+    .line { position: absolute; left: 50%; width: 2px; background: blue; transform: translateX(-50%); }
+  </style>
+</head>
+<body>
+  <h1>Yoke Height Calculator</h1>
+  <label>Frame Model: <input id="frame" /></label>
+  <label>Frame Size: <input id="size" /></label>
+  <label>Tire Width (in): <input id="tireWidth" type="number" step="0.1" /></label>
+  <label>Brake: <input id="brake" /></label>
+  <label>Yoke: <input id="yoke" /></label>
+  <button id="calcBtn">Calculate</button>
+  <p id="result"></p>
+
+  <div class="diagram" id="diagram">
+    <div class="tire"></div>
+    <div class="line" id="line"></div>
+    <div class="yoke" id="yokeMarker"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
