@@ -7,5 +7,275 @@
     "yoke": "Rene Herse",
     "frontHeightMm": 28,
     "rearHeightMm": 28
+  },
+  {
+    "frame": "Crust Romanceur",
+    "size": "54cm",
+    "tireWidthIn": 2.3,
+    "brake": "Paul Neo-Retro",
+    "yoke": "Rene Herse",
+    "frontHeightMm": 30,
+    "rearHeightMm": 30
+  },
+  {
+    "frame": "Crust Romanceur",
+    "size": "56cm",
+    "tireWidthIn": 2.5,
+    "brake": "Tektro CR720",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 32,
+    "rearHeightMm": 32
+  },
+  {
+    "frame": "Surly Cross-Check",
+    "size": "50cm",
+    "tireWidthIn": 2.1,
+    "brake": "Avid Shorty 6",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 26,
+    "rearHeightMm": 26
+  },
+  {
+    "frame": "Surly Cross-Check",
+    "size": "52cm",
+    "tireWidthIn": 2.1,
+    "brake": "Avid Shorty 6",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 28,
+    "rearHeightMm": 28
+  },
+  {
+    "frame": "Surly Cross-Check",
+    "size": "54cm",
+    "tireWidthIn": 2.3,
+    "brake": "Shimano CX70",
+    "yoke": "Rene Herse",
+    "frontHeightMm": 30,
+    "rearHeightMm": 30
+  },
+  {
+    "frame": "Surly Cross-Check",
+    "size": "56cm",
+    "tireWidthIn": 2.3,
+    "brake": "Shimano CX70",
+    "yoke": "Rene Herse",
+    "frontHeightMm": 32,
+    "rearHeightMm": 32
+  },
+  {
+    "frame": "Bombtrack Hook",
+    "size": "50cm",
+    "tireWidthIn": 2.0,
+    "brake": "Tektro CR720",
+    "yoke": "Paul Thumbies",
+    "frontHeightMm": 25,
+    "rearHeightMm": 25
+  },
+  {
+    "frame": "Bombtrack Hook",
+    "size": "52cm",
+    "tireWidthIn": 2.0,
+    "brake": "Tektro CR720",
+    "yoke": "Paul Thumbies",
+    "frontHeightMm": 27,
+    "rearHeightMm": 27
+  },
+  {
+    "frame": "Bombtrack Hook",
+    "size": "54cm",
+    "tireWidthIn": 2.2,
+    "brake": "Dia-Compe 999",
+    "yoke": "Rene Herse",
+    "frontHeightMm": 29,
+    "rearHeightMm": 29
+  },
+  {
+    "frame": "Ritchey Breakaway",
+    "size": "52cm",
+    "tireWidthIn": 1.9,
+    "brake": "Shimano CX70",
+    "yoke": "Shimano Cable Hanger",
+    "frontHeightMm": 24,
+    "rearHeightMm": 24
+  },
+  {
+    "frame": "Ritchey Breakaway",
+    "size": "54cm",
+    "tireWidthIn": 1.9,
+    "brake": "Shimano CX70",
+    "yoke": "Shimano Cable Hanger",
+    "frontHeightMm": 26,
+    "rearHeightMm": 26
+  },
+  {
+    "frame": "Ritchey Breakaway",
+    "size": "56cm",
+    "tireWidthIn": 2.1,
+    "brake": "Paul Neo-Retro",
+    "yoke": "Paul Thumbies",
+    "frontHeightMm": 28,
+    "rearHeightMm": 28
+  },
+  {
+    "frame": "Soma Wolverine",
+    "size": "50cm",
+    "tireWidthIn": 2.4,
+    "brake": "Avid Shorty 6",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 31,
+    "rearHeightMm": 31
+  },
+  {
+    "frame": "Soma Wolverine",
+    "size": "52cm",
+    "tireWidthIn": 2.4,
+    "brake": "Avid Shorty 6",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 33,
+    "rearHeightMm": 33
+  },
+  {
+    "frame": "Soma Wolverine",
+    "size": "54cm",
+    "tireWidthIn": 2.6,
+    "brake": "Paul Neo-Retro",
+    "yoke": "Rene Herse",
+    "frontHeightMm": 35,
+    "rearHeightMm": 35
+  },
+  {
+    "frame": "Cannondale CAAD3",
+    "size": "50cm",
+    "tireWidthIn": 1.8,
+    "brake": "Tektro CR720",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 22,
+    "rearHeightMm": 22
+  },
+  {
+    "frame": "Cannondale CAAD3",
+    "size": "52cm",
+    "tireWidthIn": 1.8,
+    "brake": "Tektro CR720",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 24,
+    "rearHeightMm": 24
+  },
+  {
+    "frame": "Cannondale CAAD3",
+    "size": "54cm",
+    "tireWidthIn": 2.0,
+    "brake": "Dia-Compe 999",
+    "yoke": "Paul Thumbies",
+    "frontHeightMm": 26,
+    "rearHeightMm": 26
+  },
+  {
+    "frame": "Rivendell Atlantis",
+    "size": "52cm",
+    "tireWidthIn": 2.8,
+    "brake": "Paul Neo-Retro",
+    "yoke": "Rene Herse",
+    "frontHeightMm": 38,
+    "rearHeightMm": 38
+  },
+  {
+    "frame": "Rivendell Atlantis",
+    "size": "54cm",
+    "tireWidthIn": 2.8,
+    "brake": "Paul Neo-Retro",
+    "yoke": "Rene Herse",
+    "frontHeightMm": 40,
+    "rearHeightMm": 40
+  },
+  {
+    "frame": "Rivendell Atlantis",
+    "size": "56cm",
+    "tireWidthIn": 3.0,
+    "brake": "Dia-Compe 999",
+    "yoke": "Rene Herse",
+    "frontHeightMm": 42,
+    "rearHeightMm": 42
+  },
+  {
+    "frame": "All-City Space Horse",
+    "size": "50cm",
+    "tireWidthIn": 2.2,
+    "brake": "Avid Shorty 6",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 29,
+    "rearHeightMm": 29
+  },
+  {
+    "frame": "All-City Space Horse",
+    "size": "52cm",
+    "tireWidthIn": 2.2,
+    "brake": "Avid Shorty 6",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 31,
+    "rearHeightMm": 31
+  },
+  {
+    "frame": "All-City Space Horse",
+    "size": "54cm",
+    "tireWidthIn": 2.4,
+    "brake": "Shimano CX70",
+    "yoke": "Shimano Cable Hanger",
+    "frontHeightMm": 33,
+    "rearHeightMm": 33
+  },
+  {
+    "frame": "Kona Jake",
+    "size": "50cm",
+    "tireWidthIn": 2.0,
+    "brake": "Tektro CR720",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 26,
+    "rearHeightMm": 26
+  },
+  {
+    "frame": "Kona Jake",
+    "size": "52cm",
+    "tireWidthIn": 2.0,
+    "brake": "Tektro CR720",
+    "yoke": "Tektro Triangle",
+    "frontHeightMm": 28,
+    "rearHeightMm": 28
+  },
+  {
+    "frame": "Kona Jake",
+    "size": "54cm",
+    "tireWidthIn": 2.2,
+    "brake": "Shimano CX70",
+    "yoke": "Shimano Cable Hanger",
+    "frontHeightMm": 30,
+    "rearHeightMm": 30
+  },
+  {
+    "frame": "Specialized CruX",
+    "size": "52cm",
+    "tireWidthIn": 1.9,
+    "brake": "Shimano CX70",
+    "yoke": "Shimano Cable Hanger",
+    "frontHeightMm": 25,
+    "rearHeightMm": 25
+  },
+  {
+    "frame": "Specialized CruX",
+    "size": "54cm",
+    "tireWidthIn": 1.9,
+    "brake": "Shimano CX70",
+    "yoke": "Shimano Cable Hanger",
+    "frontHeightMm": 27,
+    "rearHeightMm": 27
+  },
+  {
+    "frame": "Specialized CruX",
+    "size": "56cm",
+    "tireWidthIn": 2.1,
+    "brake": "Paul Neo-Retro",
+    "yoke": "Paul Thumbies",
+    "frontHeightMm": 29,
+    "rearHeightMm": 29
   }
 ]

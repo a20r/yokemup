@@ -1,33 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Yoke Height Calculator</title>
-  <style>
-    body { font-family: sans-serif; margin: 20px; }
-    label { display: block; margin-top: 10px; }
-    .diagram { position: relative; width: 300px; height: 200px; border: 1px solid #ccc; margin-top: 20px; }
-    .tire { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 200px; height: 60px; background: #555; border-radius: 50% / 40%; }
-    .yoke { position: absolute; left: 50%; width: 10px; height: 10px; background: red; transform: translateX(-50%); cursor: pointer; }
-    .line { position: absolute; left: 50%; width: 2px; background: blue; transform: translateX(-50%); }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoke Height Calculator - Modern Bike Setup Tool</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <h1>Yoke Height Calculator</h1>
-  <label>Frame Model: <input id="frame" /></label>
-  <label>Frame Size: <input id="size" /></label>
-  <label>Tire Width (in): <input id="tireWidth" type="number" step="0.1" /></label>
-  <label>Brake: <input id="brake" /></label>
-  <label>Yoke: <input id="yoke" /></label>
-  <button id="calcBtn">Calculate</button>
-  <p id="result"></p>
 
-  <div class="diagram" id="diagram">
-    <div class="tire"></div>
-    <div class="line" id="line"></div>
-    <div class="yoke" id="yokeMarker"></div>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="header-content">
+        <h1 class="app-title">
+          <span class="title-icon">🚴</span>
+          Yoke Height Calculator
+        </h1>
+        <p class="app-subtitle">Precision bike setup for optimal performance</p>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="content-grid">
+        <!-- Calculator Form -->
+        <section class="calculator-section">
+          <div class="card">
+            <h2 class="section-title">Bike Configuration</h2>
+            <form id="calculator-form" class="calculator-form">
+              <div class="form-group">
+                <label for="frame" class="form-label">Frame Model</label>
+                <select id="frame" name="frame" class="form-select" required>
+                  <option value="">Select frame model...</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="size" class="form-label">Frame Size</label>
+                <select id="size" name="size" class="form-select" required>
+                  <option value="">Select frame size...</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="tireWidth" class="form-label">Tire Width (inches)</label>
+                <input id="tireWidth" name="tireWidth" type="number" step="0.1" min="0.5" max="5.0" class="form-input"
+                  placeholder="e.g., 2.3" required>
+              </div>
+
+              <div class="form-group">
+                <label for="brake" class="form-label">Brake Type</label>
+                <select id="brake" name="brake" class="form-select" required>
+                  <option value="">Select brake type...</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="yoke" class="form-label">Yoke Type</label>
+                <select id="yoke" name="yoke" class="form-select" required>
+                  <option value="">Select yoke type...</option>
+                </select>
+              </div>
+
+              <button type="submit" class="calculate-btn">
+                <span class="btn-text">Calculate Height</span>
+                <span class="btn-icon">⚡</span>
+              </button>
+            </form>
+
+            <div id="loading" class="loading" style="display: none;">
+              <div class="spinner"></div>
+              <span>Calculating...</span>
+            </div>
+
+            <div id="result" class="result" style="display: none;"></div>
+          </div>
+        </section>
+
+        <!-- Interactive Diagram -->
+        <section class="diagram-section">
+          <div class="card">
+            <h2 class="section-title">Interactive Diagram</h2>
+            <p class="diagram-description">
+              <strong>Cantilever Brake System (Rear View from Behind)</strong><br>
+              Looking at the back of the bike, you see the dark semi-circular tire and gray rim. The <span style="color: #ef4444; font-weight: 600;">red yoke</span> at the center connects two <span style="color: #fbbf24; font-weight: 600;">straddle cables</span> that form a triangle, pulling the <span style="color: #6b7280; font-weight: 600;">brake arms</span> inward to squeeze brake pads against the rim. 
+              <br><br>
+              <strong>How to use:</strong> Drag the red yoke up or down to see how the triangle geometry changes and affects braking force.
+            </p>
+            <div class="diagram-container">
+              <div class="diagram" id="diagram">
+                <div class="tire"></div>
+                <div class="rim"></div>
+                <div class="line" id="line"></div>
+                <div class="yoke-marker" id="yokeMarker" title="Drag to adjust height"></div>
+                <div class="diagram-labels">
+                  <span class="label-tire">Tire & Rim</span>
+                  <span class="label-yoke">Yoke</span>
+                  <span class="label-brake">Brake Arms</span>
+                  <span class="label-cable">Straddle Cables</span>
+                </div>
+              </div>
+
+              <div class="diagram-legend">
+                <div class="legend-item">
+                  <div class="legend-color tire-color"></div>
+                  <span>Tire & Rim</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-color brake-color"></div>
+                  <span>Brake Arms</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-color cable-color"></div>
+                  <span>Brake Cables</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-color line-color"></div>
+                  <span>Height Measurement</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-color yoke-color"></div>
+                  <span>Yoke Position</span>
+                </div>
+              </div>
+
+              <!-- Brake Simulation Controls -->
+              <div class="controls">
+                <div class="control-group">
+                  <div class="brake-control">
+                    <div class="brake-lever" id="brakeLever"></div>
+                    <div class="brake-status" id="brakeStatus">Brake Released</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Info Section -->
+      <section class="info-section">
+        <div class="card">
+          <h2 class="section-title">About Yoke Heights</h2>
+          <div class="info-grid">
+            <div class="info-item">
+              <h3>🎯 Precision Setup</h3>
+              <p>Proper yoke height ensures optimal brake performance and wheel clearance for your specific bike
+                configuration.</p>
+            </div>
+            <div class="info-item">
+              <h3>📏 Accurate Measurements</h3>
+              <p>Our calculator uses real-world data from various bike setups to provide precise height recommendations.
+              </p>
+            </div>
+            <div class="info-item">
+              <h3>🔧 Interactive Adjustment</h3>
+              <p>Use the interactive diagram to visualize and fine-tune your yoke height in real-time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>&copy; 2025 Yoke Height Calculator. Built with modern web technologies.</p>
+    </footer>
   </div>
 
-  <script src="app.js"></script>
+  <script type="module" src="app.ts"></script>
 </body>
+
 </html>

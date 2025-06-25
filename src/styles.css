@@ -1,0 +1,1038 @@
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* App Layout */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.app-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.title-icon {
+    font-size: 3.5rem;
+}
+
+.app-subtitle {
+    font-size: 1.2rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.main-content {
+    flex: 1;
+    padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Card Component */
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 3rem;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* Form Styles */
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.form-input,
+.form-select {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input.error,
+.form-select.error {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+}
+
+/* Button Styles */
+.calculate-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* Loading Spinner */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Result Styles */
+.result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    animation: slideIn 0.3s ease;
+}
+
+.result-success {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.result-interactive {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+.result-error {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+}
+
+.result-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Diagram Layout - Rear View Perspective */
+.diagram {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.diagram:active {
+    cursor: grabbing;
+}
+
+/* Tire - Dark Semi Circle (Rear View) */
+.tire {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 90px;
+    background: linear-gradient(180deg, #111827, #374151);
+    border-radius: 90px 90px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    border: 3px solid #000;
+    border-bottom: none;
+}
+
+/* Rim - Small Grey Rectangle Beneath Tire */
+.rim {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 12px;
+    background: linear-gradient(135deg, #9ca3af, #6b7280);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    border: 1px solid #374151;
+}
+
+/* Seat Post and Cable Hanger */
+.seat-post {
+    position: absolute;
+    left: 50%;
+    width: 8px;
+    background: linear-gradient(180deg, #6b7280, #374151);
+    transform: translateX(-50%);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(107, 114, 128, 0.3);
+    z-index: 3;
+}
+
+.cable-hanger {
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 12px;
+    background: linear-gradient(135deg, #374151, #1f2937);
+    transform: translateX(-50%);
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+}
+
+.cable-hanger::before {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: #ef4444;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Frame Stays (Seatstays where brake posts mount) */
+.frame-stay {
+    position: absolute;
+    height: 6px;
+    background: linear-gradient(90deg, #6b7280, #374151);
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    /* Behind brake components */
+}
+
+.frame-stay-left {
+    bottom: 158px;
+    /* Level with brake posts */
+    left: 25%;
+    width: 90px;
+    transform: rotate(20deg);
+    /* Angled like seatstay toward new brake post position */
+    transform-origin: right center;
+}
+
+.frame-stay-right {
+    bottom: 158px;
+    left: 50%;
+    width: 90px;
+    transform: rotate(-20deg);
+    /* Mirror angle toward new brake post position */
+    transform-origin: left center;
+}
+
+/* Brake Posts (Pivot Points on Seatstays) */
+.brake-post {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: linear-gradient(135deg, #374151, #1f2937);
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    bottom: 120px;
+    border: 2px solid #6b7280;
+}
+
+.brake-post-left {
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+.brake-post-right {
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+/* Brake Arms - Cantilever Arms that Pivot on Posts */
+.brake-arm {
+    position: absolute;
+    width: 70px;
+    height: 6px;
+    background: linear-gradient(90deg, #6b7280, #374151);
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 6;
+    transition: all 0.3s ease;
+    bottom: 117px;
+    border: 1px solid #1f2937;
+}
+
+.brake-arm-left {
+    left: 30%;
+    transform: translateX(-50%) scaleX(-1);
+    /* Reflect across Y-axis instead of rotating */
+    transform-origin: 10px 50%;
+    /* Pivot point at brake post */
+}
+
+.brake-arm-right {
+    left: 70%;
+    transform: translateX(-50%);
+    /* No transformation - natural orientation */
+    transform-origin: 10px 50%;
+    /* Pivot point at brake post */
+}
+
+/* Cable Anchor Points */
+.cable-anchor {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    border: 1px solid #92400e;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    z-index: 7;
+    transition: all 0.3s ease;
+}
+
+/* Brake Shoe on Arms (contacts the rim) */
+.brake-arm::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    /* At the end that touches the RIM (not tire) */
+    width: 12px;
+    height: 15px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    border-radius: 3px;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.4);
+    transition: all 0.2s ease;
+    border: 1px solid #b91c1c;
+}
+
+.brake-arm:hover::before {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.4);
+}
+
+/* Cable Anchor Point on Arms (for straddle cable attachment) */
+.brake-arm::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    /* At the far end from the brake shoe (cable anchor point) */
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border: 1px solid #d97706;
+}
+
+/* Straddle Cables - FROM yoke DOWN TO brake arm cable anchors */
+.straddle-cable {
+    position: absolute;
+    height: 3px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(251, 191, 36, 0.5);
+    z-index: 7;
+    transition: all 0.3s ease;
+    transform-origin: 0 50%;
+    border: 1px solid #d97706;
+}
+
+/* Cable end ferrules/crimps */
+.straddle-cable::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -2px;
+    width: 4px;
+    height: 4px;
+    background: #374151;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.straddle-cable::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -2px;
+    width: 4px;
+    height: 4px;
+    background: #374151;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Brake Cable - FROM brake lever, through cable hanger, down to yoke */
+.main-brake-cable {
+    position: absolute;
+    left: 50%;
+    width: 3px;
+    background: linear-gradient(180deg, #6b7280, #374151);
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(107, 114, 128, 0.3);
+    z-index: 8;
+    transition: all 0.3s ease;
+}
+
+/* Cable tension animation when dragging */
+.diagram.dragging .straddle-cable {
+    box-shadow: 0 2px 6px rgba(251, 191, 36, 0.5);
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.diagram.dragging .main-brake-cable {
+    box-shadow: 0 3px 8px rgba(107, 114, 128, 0.5);
+    background: linear-gradient(180deg, #374151, #1f2937);
+}
+
+/* Brake Type Specific Styling */
+.brake-type-paul {
+    background: linear-gradient(90deg, #7c3aed, #5b21b6);
+    box-shadow: 0 2px 4px rgba(124, 58, 237, 0.3);
+}
+
+.brake-type-paul::before {
+    background: #a855f7;
+}
+
+.brake-type-shimano {
+    background: linear-gradient(90deg, #059669, #047857);
+    box-shadow: 0 2px 4px rgba(5, 150, 105, 0.3);
+}
+
+.brake-type-shimano::before {
+    background: #10b981;
+}
+
+.brake-type-tektro {
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.3);
+}
+
+.brake-type-tektro::before {
+    background: #ef4444;
+}
+
+.brake-type-avid {
+    background: linear-gradient(90deg, #ea580c, #c2410c);
+    box-shadow: 0 2px 4px rgba(234, 88, 12, 0.3);
+}
+
+.brake-type-avid::before {
+    background: #f97316;
+}
+
+.brake-type-dia-compe {
+    background: linear-gradient(90deg, #0891b2, #0e7490);
+    box-shadow: 0 2px 4px rgba(8, 145, 178, 0.3);
+}
+
+.brake-type-dia-compe::before {
+    background: #06b6d4;
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+    transform: translateX(-50%);
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Yoke Marker - More Realistic Design */
+.yoke-marker {
+    position: absolute;
+    left: 50%;
+    width: 24px;
+    height: 18px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    transform: translateX(-50%);
+    cursor: grab;
+    border-radius: 8px 8px 4px 4px;
+    border: 3px solid white;
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+    transition: all 0.2s ease;
+    z-index: 15;
+}
+
+.yoke-marker::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    width: 10px;
+    height: 6px;
+    background: #374151;
+    border-radius: 3px;
+    transform: translateX(-50%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.yoke-marker::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    width: 8px;
+    height: 6px;
+    background: #6b7280;
+    border-radius: 4px 4px 2px 2px;
+    transform: translateX(-50%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.yoke-marker:hover {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
+.yoke-marker:active {
+    cursor: grabbing;
+    transform: translateX(-50%) scale(0.95);
+}
+
+/* Brake Simulation Effects */
+.diagram.brake-engaged .straddle-cable {
+    box-shadow: 0 2px 6px rgba(251, 191, 36, 0.6);
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+    height: 3px;
+}
+
+.diagram.brake-engaged .main-brake-cable {
+    box-shadow: 0 3px 8px rgba(107, 114, 128, 0.6);
+    background: linear-gradient(180deg, #374151, #1f2937);
+    width: 4px;
+}
+
+.diagram.brake-engaged .brake-arm {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.diagram.brake-engaged .brake-arm-left {
+    transform: translateX(-50%) rotate(-60deg);
+    /* More inward when engaged */
+}
+
+.diagram.brake-engaged .brake-arm-right {
+    transform: translateX(-50%) rotate(60deg);
+    /* More inward when engaged */
+}
+
+.diagram.brake-engaged .yoke-marker {
+    box-shadow: 0 6px 12px rgba(239, 68, 68, 0.6);
+    transform: translateX(-50%) scale(1.05);
+}
+
+.diagram-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.label-tire {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.label-yoke {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.label-brake {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.label-cable {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Diagram Legend */
+.diagram-legend {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.tire-color {
+    background: linear-gradient(135deg, #374151, #1f2937);
+}
+
+.brake-color {
+    background: linear-gradient(135deg, #374151, #1f2937);
+}
+
+.cable-color {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+.line-color {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.yoke-color {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* Info Section */
+.info-section {
+    margin-top: 2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.info-item p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Footer */
+.app-footer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 2rem 0;
+    text-align: center;
+    color: #6b7280;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .title-icon {
+        font-size: 2.5rem;
+    }
+
+    .app-subtitle {
+        font-size: 1rem;
+    }
+
+    .main-content {
+        padding: 2rem 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .diagram {
+        width: 100%;
+        max-width: 300px;
+        height: 250px;
+    }
+
+    .tire {
+        width: 200px;
+        height: 50px;
+    }
+
+    .diagram-legend {
+        gap: 1rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .header-content,
+    .main-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    }
+
+    .card {
+        background: rgba(30, 41, 59, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section-title,
+    .form-label,
+    .info-item h3 {
+        color: #f1f5f9;
+    }
+
+    .form-input,
+    .form-select {
+        background: rgba(51, 65, 85, 0.8);
+        border-color: #475569;
+        color: #f1f5f9;
+    }
+
+    .form-input::placeholder {
+        color: #94a3b8;
+    }
+
+    .diagram {
+        background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+        border-color: #475569;
+    }
+
+    .label-tire,
+    .label-yoke {
+        background: rgba(30, 41, 59, 0.9);
+        color: #f1f5f9;
+    }
+}
+
+/* Controls Section - Brake Simulation */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.brake-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.brake-lever {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    background: linear-gradient(135deg, #374151, #1f2937);
+    border-radius: 20px;
+    border: 2px solid #6b7280;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+.brake-lever:hover {
+    background: linear-gradient(135deg, #4b5563, #374151);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.brake-lever:active,
+.brake-lever.engaged {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.4);
+}
+
+.brake-lever::before {
+    content: 'Pull Brake';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    pointer-events: none;
+}
+
+.brake-lever.engaged::before {
+    content: 'Release';
+}
+
+.brake-status {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.brake-status.engaged {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
